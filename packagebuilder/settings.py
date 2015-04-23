@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'packagebuilder.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': dj_database_url.config(default='postgres://postgres:postgres@localhost:5432/packagebuilder')
 }
 
 # Celery settings
@@ -98,6 +98,6 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_PATH, 'static'),
 )
 
-SALESFORCE_CONSUMER_KEY = 'SALESFORCE_CLIENT_KEY'
-SALESFORCE_CONSUMER_SECRET = 'SALESFORCE_CLIENT_SECRET'
-SALESFORCE_REDIRECT_URI = 'https://packagebuilder.herokuapp.com/oauth_response'
+SALESFORCE_CONSUMER_KEY = '3MVG98RqVesxRgQ7rav_kyO7n.q9AQ4CgVpSC3yFuYqNIJnTcTujgd3ts0W8sPxRYqwlIpBKTa2XMUGiFGpVv'
+SALESFORCE_CONSUMER_SECRET = '4106449949742446851'
+SALESFORCE_REDIRECT_URI = 'https://devinity.pl/oauth_response'
