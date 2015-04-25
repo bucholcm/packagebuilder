@@ -1,6 +1,8 @@
 from __future__ import absolute_import
 from celery import Celery
-import os, sys, traceback
+import os
+import sys
+import traceback
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'packagebuilder.settings')
 
@@ -68,6 +70,7 @@ def query_components_from_org(package, instance_url, api_version, org_id, access
                         component_record = Component()
                         component_record.component_type = component_type_query[0]
                         component_record.name = component.fullName
+                        print 'component full name ' + component.fullName
                         component_record.include = True
                         component_record.save()
 
