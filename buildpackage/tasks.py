@@ -69,8 +69,8 @@ def query_components_from_org(package, instance_url, api_version, org_id, access
                         # create the component record and save
                         component_record = Component()
                         component_record.component_type = component_type_query[0]
-                        component_record.name = component.fullName
-                        print 'component full name ' + component.fullName
+                        component_record.name = component.fullName.encode('utf-8')
+                        print 'component full name ' + component.fullName.encode('utf-8')
                         component_record.include = True
                         component_record.save()
 
