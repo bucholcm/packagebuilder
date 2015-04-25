@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 
 
 class Package(models.Model):
@@ -22,7 +21,6 @@ class ComponentType(models.Model):
         return self.component_set.order_by('name')
 
 
-@python_2_unicode_compatible
 class Component(models.Model):
     component_type = models.ForeignKey(ComponentType)
     name = models.CharField(max_length=255)

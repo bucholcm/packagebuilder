@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from celery import Celery
-import os
+import os, sys, traceback
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'packagebuilder.settings')
 
@@ -86,6 +86,9 @@ def query_components_from_org(package, instance_url, api_version, org_id, access
     except Exception as error:
         package.status = 'Error'
         package.error = error
+        print '-'*60
+        traceback.print_exc(file=sys.stdout)
+        print '-'*60
 
     package.save()
 
